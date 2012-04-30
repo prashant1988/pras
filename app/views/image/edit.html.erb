@@ -1,0 +1,17 @@
+<h1>Edit Page</h1>
+
+
+<%=form_for @a do |f| %>
+
+    <%= f.label :Name  %>
+    <%= f.text_field :name %>
+    </br>
+    <%= f.label :Describe %>
+    <%= f.text_field :describe%>
+    </br>
+    <%=f.submit  %>
+<%end  %>
+
+<%= link_to 'back', image_index_path %>
+
+<%= link_to 'new', new_image_path %>

@@ -1,0 +1,12 @@
+<h1>New Page</h1>
+
+<%= form_for @a , :url=>{:action=>'create'} do |f| %>
+
+    <p>Name<%=f.text_field :name%></p>
+
+    <p>Describe<%=f.text_field :describe%></p>
+
+    <%= f.submit%>
+<%end  %>
+
+<%=link_to 'back',image_index_path %>

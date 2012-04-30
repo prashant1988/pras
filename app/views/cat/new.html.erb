@@ -1,0 +1,12 @@
+<h1>New Page</h1>
+
+<%= form_for @a , :url=>{:action=>'create'} do |f| %>
+
+<p>Name<%=f.text_field :name%></p>
+<p>Age<%=f.text_field :age%></p>
+<p>Address<%=f.text_field :address%></p>
+<%= f.submit%>
+ <%end  %>
+
+<%=link_to 'back',cat_index_path %>
+<%#=link_to 'update' ,edit_cat_path %>

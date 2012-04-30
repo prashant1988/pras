@@ -1,0 +1,26 @@
+<h1>Index page</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Describe</th>
+
+
+    <th>select</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <%@a.each do |i| %>
+      <tr>
+        <td><%= i.name%></td>
+        <td><%=i.describe %></td>
+        <td><%= link_to 'show',i %> </td>
+        <td><%= link_to 'edit',edit_image_path(i) %></td>
+        <td><%= link_to 'destroy',i,:confirm=>'Are you sure',:method=>:delete %></td>
+
+      </tr>
+  <%end %>
+</table>
+<%= link_to 'new',new_image_path %>
+      

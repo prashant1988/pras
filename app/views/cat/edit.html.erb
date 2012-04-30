@@ -1,0 +1,20 @@
+<h1>Edit Page</h1>
+
+
+<%=form_for @a do |f| %>
+
+<%= f.label :Name  %>
+<%= f.text_field :name %>
+             </br>
+<%= f.label :Age  %>
+<%= f.text_field :age %>
+              </br>
+<%=f.label :Address  %>
+<%= f.text_field :address %>
+        </br>
+<%=f.submit  %>
+<%end  %>
+
+<%= link_to 'back', cat_index_path %>
+
+<%= link_to 'new', new_cat_path %>

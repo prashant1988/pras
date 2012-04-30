@@ -1,0 +1,27 @@
+<h1>Index page</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    
+    <th>select</th>
+    <th></th>
+    <th></th>
+    </tr>
+    
+    <%@a.each do |i| %>
+    <tr>
+      <td><%= i.name%></td>
+      <td><%=i.age %></td>
+      <td><%=i.address %></td>
+      <td><%= link_to 'show',i %> </td>
+      <td><%= link_to 'edit',edit_cat_path(i) %></td>
+      <td><%= link_to 'destroy',i,:confirm=>'Are you sure',:method=>:delete %></td>
+      <td><%#= link_to 'Destroy',i, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+      <%end %>
+  </table>
+<%= link_to 'new',new_cat_path %>
+      
