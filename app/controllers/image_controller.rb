@@ -2,6 +2,8 @@ class ImageController < ApplicationController
 
   def index
     @a=Image.all
+    @b=Cat.all
+
   end
 
   def show
@@ -13,7 +15,7 @@ class ImageController < ApplicationController
   end
 
   def create
-    @a=Image.new(params[:image])
+    @a=Image.create(params[:image])
     if @a.save
       redirect_to :action=> 'index'
     else

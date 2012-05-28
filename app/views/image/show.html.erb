@@ -4,5 +4,11 @@ Name: <%=@a.name  %><br>
 
 Describe:  <%=@a.describe %>   <br>
 
+Image  :  <br/>
+            <%#= image_tag @a.avatar.url %>
+            <%#= image_tag @a.avatar.url(:medium) %>
+            <%= image_tag @a.avatar.url(:thumb) %>
+
+
 </br>
 <%=link_to 'back',image_index_path %>

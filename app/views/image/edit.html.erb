@@ -1,7 +1,7 @@
 <h1>Edit Page</h1>
 
 
-<%=form_for @a do |f| %>
+<%= form_for @a do |f| %>
 
     <%= f.label :Name  %>
     <%= f.text_field :name %>
@@ -9,6 +9,8 @@
     <%= f.label :Describe %>
     <%= f.text_field :describe%>
     </br>
+    <%= f.label :upload%>
+    <%= f.file_field :avatar%>
     <%=f.submit  %>
 <%end  %>
 

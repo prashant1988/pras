@@ -14,6 +14,7 @@ class CatController < ApplicationController
 
   def create
     @a=Cat.new(params[:cat])
+    puts @a.inspect
     if @a.save
       redirect_to :action=> 'index'
     else
