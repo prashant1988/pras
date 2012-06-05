@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528060727) do
+ActiveRecord::Schema.define(:version => 20120605120628) do
 
   create_table "cats", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120528060727) do
     t.string   "address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "image_id"
   end
 
   create_table "images", :force => true do |t|
@@ -26,7 +27,10 @@ ActiveRecord::Schema.define(:version => 20120528060727) do
     t.string   "describe"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.string   "upload"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

@@ -1,12 +1,12 @@
 <h1>Index page</h1>
 
-<table>
+<table border="1" align="center">
   <tr>
     <th>Name</th>
     <th>Describe</th>
-
-
-    <th>select</th>
+     <th>Cat_index</th>
+    <th>files</th>
+    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -15,10 +15,11 @@
       <tr>
         <td><%= i.name%></td>
         <td><%=i.describe %></td>
+        <td><%= link_to 'Assosiation',:controller=>'cat',:action=>'index',:id=>i.id%></td>
         <td><%= link_to 'show',i %> </td>
         <td><%= link_to 'edit',edit_image_path(i) %></td>
         <td><%= link_to 'destroy',i,:confirm=>'Are you sure',:method=>:delete %></td>
-
+        <td><%= link_to 'Download', download_image_index_path(:id => i.id) %></td>
       </tr>
   <%end %>
 </table>
@@ -27,5 +28,5 @@
 
 <br/>
 
-<%=link_to 'cat_controller', cat_index_path %>
+
       

@@ -1,7 +1,7 @@
 <h1>Edit Page</h1>
 
 
-<%= form_for @a do |f| %>
+<%= form_for @a, :html=>{ :multipart=>true } do |f| %>
 
     <%= f.label :Name  %>
     <%= f.text_field :name %>

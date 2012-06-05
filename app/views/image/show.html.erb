@@ -5,9 +5,9 @@ Name: <%=@a.name  %><br>
 Describe:  <%=@a.describe %>   <br>
 
 Image  :  <br/>
-            <%#= image_tag @a.avatar.url %>
+            <%= image_tag @a.avatar.url,:size => "200x200" %>
             <%#= image_tag @a.avatar.url(:medium) %>
-            <%= image_tag @a.avatar.url(:thumb) %>
+            <%#= image_tag @a.avatar.url(:thumb) %>
 
 
 </br>

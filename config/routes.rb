@@ -5,9 +5,13 @@ Pras::Application.routes.draw do
   #
   #get "image/new"
 
-  resources :cat
 
-  resources :image
+  resources :cat
+  resources :image do
+
+    get "download",  :on => :collection
+
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

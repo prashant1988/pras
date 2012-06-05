@@ -1,22 +1,26 @@
-class CatController < ApplicationController
+  class CatController < ApplicationController
 
    def index
-     @a=Cat.all
+     @img=Image.find(params[:id])
+     @cats=@img.cats.all
    end
 
    def show
-    @a=Cat.find(params[:id])
+     #@img=Image.find(params[:id])
+    @cat=Cat.find(params[:id])
   end
 
    def new
-      @a=Cat.new
+     @img=Image.find(params[:id])
+      @cat=@img.cats.new
    end
 
   def create
-    @a=Cat.new(params[:cat])
-    puts @a.inspect
-    if @a.save
-      redirect_to :action=> 'index'
+    @img=Image.find(params[:id])
+    @cat=@img.cats.create(params[:cat])
+
+    if @cat.save
+      redirect_to :action=> 'index', :id=>@img.id
     else
 
       render 'new'
@@ -26,20 +30,24 @@ class CatController < ApplicationController
 
 
   def edit
-    @a=Cat.find(params[:id])
+
+    @cat=Cat.find(params[:id])
+    @img=@cat.image
   end
   def update
-    @a=Cat.find(params[:id])
-    if @a.update_attributes(params[:cat])
-      redirect_to :action=> 'index'
+    @cat=Cat.find(params[:id])
+        @img=@cat.image
+    if @cat.update_attributes(params[:cat])
+      redirect_to :action=> 'index', :id=>@img.id
     else
       render 'edit'
     end
   end
   def destroy
-    @a=Cat.find(params[:id])
-    if @a.delete
-      redirect_to :action=>'index'
+    @cat=Cat.find(params[:id])
+    @img=@cat.image
+    if @cat.delete
+      redirect_to :action=>'index', :id=>@img.id
     end
   end
 

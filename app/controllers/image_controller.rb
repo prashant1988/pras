@@ -1,12 +1,14 @@
 class ImageController < ApplicationController
+# for help https://github.com/skillachie/File-Upload-App
+
 
   def index
     @a=Image.all
-    @b=Cat.all
 
   end
 
   def show
+   puts params.inspect
     @a=Image.find(params[:id])
   end
 
@@ -37,6 +39,18 @@ class ImageController < ApplicationController
       render 'edit'
     end
   end
+
+  def download
+   # puts params.inspect
+    dwnl=Image.find(params[:id])
+
+    send_file dwnl.avatar.path,
+              :filename=>dwnl.avatar_file_name,
+              :type=>dwnl.avatar_content_type,
+              :disposition =>'attachment'
+    flash[:notice]='your file has been downloaded'
+  end
+
   def destroy
     @a=Image.find(params[:id])
     if @a.delete
